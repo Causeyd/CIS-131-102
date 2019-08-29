@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="title">
+        Objectively Speaking
+    </h1>
+    <img src="Hyena.jpg" alt="Spotted Hyena" id="HyenaID">
+    <script>
+        //document.write(window.innerHeight);
+        //window.alert("Alo Lume");
+        
+        var myImage = document.getElementById('HyenaID');
+        document.write(myImage);
+        var myTitle = document.getElementById('title');
+        document.write(myTitle);
+    </script>
+    
+    <h2 onclick="myTitle.innerHTML = 'Spotted Hyenas have a higher successful kill rate when hunting than lions, and scavenge less frequently than lions.'">Click Me!</h2>
+    <input type="button" onclick="myTitle.innerHTML = 'Spotted Hyenas have the highest bite force per pound of any animal.'" value = 'Or me.'>
+</body>
+</html>
