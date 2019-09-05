@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        img {
+            width: 500px;
+        }
+
+        .thumbnail {
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            padding: 5px;
+            width: 150px;
+        }
+        img:hover {
+         box-shadow: 0 0 2px 1px rgba(0, 140, 186, 0.5);
+        }
+    </style>
+    <script src="scripts.js"></script>
+</head>
+<body>
+    <h1>Image Swapping</h1>
+    <img src="Wild Talents.jpg" alt="Wild Talents Core Rules" id="WildTalents">
+    <p>Click a thumbnail to change the focus.</p>
+    <img src="Wild Talents.jpg" alt="Wild Talents Core Rules" class="thumbnail"  onclick="imageChange('Wild Talents.jpg')">
+    <img src="Anima.jpg" alt="Anima Beyond Fantasy" class="thumbnail"  onclick="imageChange('Anima.jpg')">
+    <img src="Cthulhu.gif" alt="Call of Cthulhu"  class="thumbnail"  onclick="imageChange('Cthulhu.gif')">
+    <img src="Pathfinder.jpg" alt="Pathfinder Core Book"  class="thumbnail"  onclick="imageChange('Pathfinder.jpg')" >
+</body>
+</html>
