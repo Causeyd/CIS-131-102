@@ -1,0 +1,22 @@
+GitHub Link: https://github.com/TaylorG63/CommunityWebsite
+
+Company: Book Marx - small book store
+
+Page 1: Dylan
+Monthly Reading List/Suggestions
+
+Page 2: Daniel
+Landing/Home page
+
+Page 3: Taylor
+About/Contact Page
+
+Ideas
+- contact page could display a form and use javascript to 
+display the info to the user.
+
+- Book suggestions could have a onclick event or event handeler
+ for providing more information
+ 
+- Create our own carousel using some click events to swap some images
+

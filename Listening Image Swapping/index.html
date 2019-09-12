@@ -14,21 +14,29 @@
             border: 1px solid #ddd;
             border-radius: 4px;
             padding: 5px;
-            width: 150px;
+            width: 200px;
         }
         img:hover {
          box-shadow: 0 0 2px 1px rgba(0, 140, 186, 0.5);
         }
     </style>
-    <script src="scripts.js"></script>
+
+    <script>
+    var currentImage;
+    function imageChange(currentImage) 
+    {
+        document.getElementById('lrgImage').src = currentImage.src;
+    }
+    </script>
 </head>
 <body>
     <h1>Image Swapping</h1>
-    <img src="Wild Talents.jpg" alt="Wild Talents Core Rules" id="WildTalents">
+    <img src="Wild Talents.jpg" alt="Wild Talents Core Rules" id="lrgImage">
     <p>Click a thumbnail to change the focus.</p>
-    <img src="Wild Talents.jpg" alt="Wild Talents Core Rules" class="thumbnail"  onclick="imageChange('Wild Talents.jpg')">
-    <img src="Anima.jpg" alt="Anima Beyond Fantasy" class="thumbnail"  onclick="imageChange('Anima.jpg')">
-    <img src="Cthulhu.gif" alt="Call of Cthulhu"  class="thumbnail"  onclick="imageChange('Cthulhu.gif')">
-    <img src="Pathfinder.jpg" alt="Pathfinder Core Book"  class="thumbnail"  onclick="imageChange('Pathfinder.jpg')" >
+    <img src="Wild Talents.jpg" alt="Wild Talents Core Rules" id="WildTalentsMini" class="thumbnail"  onclick="imageChange(this)">
+    <img src="Anima.jpg" alt="Anima Beyond Fantasy" id="AnimaMini" class="thumbnail"  onclick="imageChange(this)">
+    <img src="Cthulhu.gif" alt="Call of Cthulhu" id="CthulhuMini" class="thumbnail"  onclick="imageChange(this)">
+    <img src="Pathfinder.jpg" alt="Pathfinder Core Book" id="PathfinderMini" class="thumbnail"  onclick="imageChange(this)" >
+    <script src="scripts.js"></script>
 </body>
 </html>

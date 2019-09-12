@@ -1,0 +1,22 @@
+/*
+Community Website Stylesheet
+Daniel Causey
+Dylan Buehler
+Taylor Gross
+*/
+
+body{
+    background-color: green;
+}
+
+div{
+    background-color:white;
+    width:75%;
+    margin:auto;
+    text-align:center;
+}
+
+#Logo{
+    float: left;
+    width: 10%;
+}

@@ -16,6 +16,28 @@ function imageChange4(){
 }
 */
 
-function imageChange(currentImage){
-    document.getElementById('WildTalents').src=currentImage;
+
+document.getElementById('lrgImage').addEventListener('dblclick', function(){
+    document.getElementById('lrgImage').src = "MandM.jpg";
+    document.getElementById('WildTalentsMini').src = "MandM.jpg";
+    document.getElementById('AnimaMini').src = "Ragnarok.jpg";
+    document.getElementById('CthulhuMini').src = "Shadowrun.jpg";
+    document.getElementById('PathfinderMini').src = "Eclipse Phase.jpg";
+  /*
+    var image = document.getElementById('AnimaMini');
+    image.src = "MandM.jpg";
+    var image = document.getElementById('CthulhuMini');
+    image.src = "Ragnarok.jpg";
+    var image = document.getElementById('PathfinderMini');
+    image.src = "Shadowrun.jpg";
+    var image = document.getElementById('AnimaMini');
+    image.src = "Eclipse Phase.jpg";
+  */
+})
+
+
+/*
+function imageChange(currentImage) {
+  document.getElementById('lrgImage').src = currentImage;
 }
+*/
