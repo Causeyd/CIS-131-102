@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <header>
+    <div class="card bg-dark text-white">
+      <img src="banner.jpg" class="card-img" alt="Pizzeria Banner">
+      <div class="card-img-overlay">
+        <h2 class="card-title" id="storeName">Cheech's Premium Pizzeria</h2>
+      </div>
+    </div>
+  </header>
+<!--
+form contents for thankyou page
+action="thankyou.html" method="get"
+-->
+  <form>
+    <h6>Your Full Name:</h6>
+    <input type="text" name="Your Full Name" id="userName">
+    <div style="display:inline-block" id="userNameErr"></div>
+    <h6>Your Email Address:</h6>
+    <input type="text" name="Your Email Address" id="emailAddress">
+    <div style="display:inline-block" id="emailErr"></div>
+    <h6>Your Phone Number:</h6>
+    <input type="text" name="Your Phone Number" id="phoneNumber">
+    <div style="display:inline-block" id="phoneErr"></div>
+    <h6>Choose Your Pizza Type:</h6>
+    <select name="Pizzas" id="pizzaSelection">
+    </select>
+    <!--<img src="choose.jpg" alt="" id="pizzaChoice">-->
+    <h6>Choose Your Pizza Quantity:</h6>
+    <select name="Quantity" id="quantitySelection">
+    </select>
+    <div id="Options"></div>
+    <input type="button" onClick="valForm(this.form)" value="Validate">
+    <div id="err"></div>
+  </form>
+
+  <div id="orderOutput">
+
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  <script src="scripts.js"></script>
+</body>
+
+</html>
