@@ -1,0 +1,28 @@
+.container {
+  position: relative;
+}
+
+#backgroundImage {
+  width: 100%;
+}
+
+.Racer {
+  width: 80px;
+  position: absolute;
+  left: 20px;
+}
+
+#redCyclist{
+  bottom: 200px;
+}
+
+#blueCyclist{
+  bottom: 100px;
+}
+
+.Stoplight{
+  position: absolute;
+  left: 20px;
+  top: 20px;
+  width: 120px;
+}
