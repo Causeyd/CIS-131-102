@@ -2,6 +2,10 @@
   position: relative;
 }
 
+body {
+  background-color: black;
+}
+
 #backgroundImage {
   width: 100%;
 }
@@ -20,9 +24,17 @@
   bottom: 100px;
 }
 
-.Stoplight{
+#Stoplight{
   position: absolute;
   left: 20px;
   top: 20px;
   width: 120px;
+}
+
+#victoryImage{
+  position: absolute;
+  left: 900px;
+  top:300px;
+  width: 100px;
+  display: none;
 }
