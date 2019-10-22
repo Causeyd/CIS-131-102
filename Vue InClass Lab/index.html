@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Shopping Cart</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <ul>
+                <li v-for = "inventoryItem in inventoryItems" @click="purchase" v-bind:key="inventoryItem.id">{{inventoryItem}} </li>
+        </ul>
+        <hr>
+        <div id="cart"> 
+            <!-- Shopping cart, item quantities should be visible only when they are present in the cart. Similarly the subtotal should only display when items have been added to the cart, and a message should inform the user if their cart is empty. -->
+            <p v-show="click == 0">Your Cart Is Empty</p>
+            <!-- <p v-show="item1 != 0">Number of Boxes of Fries ordered: {{item1}}</p>
+            <p v-show="item2 != 0">Number of Burgers ordered: {{item2}}</p>
+            <p v-show="item3 != 0">Number of Sodas ordered: {{item3}}</p>
+            <p v-show="item4 != 0">Number of Milkshakes ordered: {{item4}}</p>
+            <p v-show="item5 != 0">Number of Salads ordered: {{item5}}</p> -->
+            <p v-show="click != 0">Your Most Recent Addition Is: {{message}}</p>
+            <p v-show="click != 0">Your Subtotal Is: {{subtotal}}</p>
+        </div>
+    </div>
+
+
+    <script>
+        var app = new Vue(
+            {
+                el: "#app",
+                data: {
+                    click: 0,
+                    inventoryItems: ["Fries: 2.99", "Burger: 5.99", "Soda: 1.99", "Milkshake: 4.99", "Salad: 3.99"],
+                    inventoryPrice: [2.99, 5.99, 1.99, 4.99, 3.99],
+                    subTotal: 0,
+                    item1: 0,
+                    item2: 0,
+                    item3: 0,
+                    item4: 0,
+                    item5: 0,
+                    subtotal: 0,
+                    message: ""
+
+                },
+                methods:{
+                    purchase(){
+                        this.click++;
+                        this.message = this.inventoryItem;
+                    }
+                }
+            }
+        )
+    </script>
+</body>
+</html>

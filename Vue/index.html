@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+    <h1>My Nue Vue</h1>
+
+    <div id="app">
+        {{message}}
+        <br>
+        <input v-model="message">
+        <!-- <button v-on:click = "message = 'Arrivederci'">Change the message.</button> -->
+        <button v-on:click = "changeMessage">Change the message.</button> 
+
+        <ul>
+            <li v-for = "todo in todos" @click="sendmessage(todo)">
+                {{todo}}
+            </li>
+        </ul>
+        <button v-on:click="additem">Add the Item in the input Box</button>
+        <hr>
+        <button v-on:click="increments">Increment Number of Clicks</button>
+        <button @click="decrements">Decrement Number of Clicks</button>
+        <p v-show="click != 0">Number of Clicks: {{click}}</p>
+        <p>Number of Clicks plus five: {{click5}}</p>
+        <p>Number of Clicks times five: {{clickx5}}</p>
+        <p>Number of Clicks squared: {{clicksquared}}</p>
+        <p>Number of Clicks cubed: {{clickcubed}}</p>
+        <hr>
+        <h4>Computed Properties</h4>
+        <p>Number of Clicks plus ten: {{click10}}</p>
+    </div>
+
+    <script>
+        var app = new Vue(
+            {
+                el: "#app",
+                data: {
+                    message: "Alo Lume",
+                    todos: ["Learn HTML", "Learn CSS", "Learn Javascript", "Learn Vue"],
+                    click: 0,
+                    click5: 0,
+                    clickx5: 0,
+                    clicksquared: 0,
+                    clickcubed: 0
+                },
+                methods:{
+                    sendmessage(theMess){
+                        this.message = theMess;
+                    },
+                    changeMessage()
+                    {
+                        this.message = "Messaged from the method.";
+                    },
+                    additem()
+                    {
+                        this.todos.push(this.message);
+                    },
+                    increments()
+                    {
+                        this.click++;
+                        this.click5 = this.click + 5;
+                        this.clickx5 = this.click * 5;
+                        this.clicksquared = this.click * this.click;
+                        this.clickcubed = this.click * this.click * this.click;
+                    },
+                    decrements()
+                    {
+                        this.click--;
+                        this.click5 = this.click + 5;
+                        this.clickx5 = this.click * 5;
+                        this.clicksquared = this.click * this.click;
+                        this.clickcubed = this.click * this.click * this.click;
+                    }
+                },
+                computed:{
+                    click10(){
+                        return this.click + 10;
+                    }
+                }
+            }
+        )
+    </script>
+
+</body>
+</html>
