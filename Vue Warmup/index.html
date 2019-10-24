@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+    <div id="app">
+
+        <p v-show="cartItem > 0">Cart Items: {{cartItem}}</p>
+        <p>Item Selected: {{itemSelected}}</p>
+        <div v-for="item in items">
+            <p @click = "updateSelected(item.name)">{{item.name}}</p>
+            <img v-bind:src = "item.imgSrc" v-bind:alt="item.name" style="height: 320px">
+            <p v-show="item.ordered > 0">{{item.name}} ordered: {{item.ordered}} for {{item.total}}</p>
+            <button v-on:click = "orderThis(item)">Order {{item.name}}</button>
+            <button v-show="item.ordered > 0" v-on:click = "removeOne(item)">Remove One  {{item.name}}</button>
+        </div>
+    </div>
+
+    <script>
+    var app = new Vue({
+        el: "#app",
+        data:
+        {
+            items: [
+                {name: "Anima: Beyond Fantasy", ordered: 0, price: 59.99, total: 0, imgSrc: "Anima.jpg"},
+                {name: "Mutants and Masterminds", ordered: 0, price: 49.99, imgSrc: "MandM.jpg"},
+            ],
+            cartItem: 0,
+            itemSelected: "None Selected"
+        },
+        methods:{
+            updateSelected(theName){
+                this.itemSelected = theName;
+            },
+            orderThis(anObj){
+                anObj.ordered++;
+                this.cartItem++;
+                anObj.total = anObj.ordered * anObj.price;
+            },
+            removeOne(anObj){
+                anObj.ordered--;
+                this.cartItem--;
+                this.itemSelected= "Remove One " + anObj.name;
+                anObj.total = anObj.ordered * anObj.price;
+            }
+        }
+    })
+    </script>
+</body>
+</html>
