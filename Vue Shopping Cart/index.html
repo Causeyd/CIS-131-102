@@ -7,23 +7,91 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Document</title>
   <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
   <div id="app">
-
+    <p v-if="cartItem > 0">Cart Items: {{cartItem}}</p>
+    <div class="products" v-for="item in items">
+        <p @click="updateSelected(item.name)">{{item.name}}</p>
+        <img v-bind:src="item.imgSrc" v-bind:alt="item.name" style="height: 240px">
+        <p>{{item.price}} Per Unit</p>
+        <p>We currently have {{item.stock}} in stock.</p>
+        <p v-if="item.stock == 0">Out Of Stock</p>
+        <p v-if="item.ordered > 0">{{item.name}} ordered: {{item.ordered}} for {{item.subTotal}}</p>
+        <button v-show="item.stock != 0" v-on:click="orderThis(item); updateTotal;">Order {{item.name}}</button>
+        <button v-show="item.ordered > 0" v-on:click="removeOne(item); updateTotal;">Remove One {{item.name}}</button>
+    </div>
+    <p v-if="cartItem > 0">Your Total is {{total}}.</p>
   </div>
 
   <script>
     var app = new Vue({
       el: "#app",
       data: {
-        
+        items: [{
+            name: "Anima: Beyond Fantasy",
+            stock: 10,
+            ordered: 0,
+            price: 69.95,
+            subTotal: 0,
+            imgSrc: "Anima.jpg"
+          },
+          {
+            name: "Wild Talents",
+            stock: 10,
+            ordered: 0,
+            price: 77.99,
+            subTotal: 0,
+            imgSrc: "Wild Talents.jpg"
+          },
+          {
+            name: "Pathfinder",
+            stock: 10,
+            ordered: 0,
+            price: 59.99,
+            subTotal: 0,
+            imgSrc: "Pathfinder.jpg"
+          // },
+          // {
+          //   name: "Mutants and Masterminds",
+          //   stock: 10,
+          //   ordered: 0,
+          //   price: 39.95,
+          //   subTotal: 0,
+          //   imgSrc: "MandM.jpg"
+          // },
+          // {
+          //   name: "Eclipse Phase",
+          //   stock: 10,
+          //   ordered: 0,
+          //   price: 53.99,
+          //   subTotal: 0,
+          //   imgSrc: "Eclipse Phase.jpg"
+          }
+        ],
+        cartItem: 0,
+        total:0
       },
       methods: {
-
+        orderThis(anObj) {
+          anObj.ordered++;
+          anObj.stock--;
+          this.cartItem++;
+          anObj.subTotal = anObj.ordered * anObj.price;
+        },
+        removeOne(anObj) {
+          anObj.ordered--;
+          anObj.stock++;
+          this.cartItem--;
+          this.itemSelected = "Remove One " + anObj.name;
+          anObj.subTotal = anObj.ordered * anObj.price;
+        },
+        updateTotal(){
+          total = item[0].subTotal + item[1].subTotal + item[2].subTotal + item[3].subTotal + item[4].subTotal;
+        }
       }
-    }
     })
   </script>
 </body>
